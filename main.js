@@ -1,4 +1,7 @@
 const express = require('express');
+const auth = require('./a.js');
+console.log(auth.test);
+
 const app = express();
 const port = 3000;
 
