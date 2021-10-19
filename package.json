@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Darvasse/ProjWeb2#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
     "sequelize": "^6.7.0"
   }
 }
