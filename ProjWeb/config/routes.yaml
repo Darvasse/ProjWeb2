@@ -1,3 +1,7 @@
-index:
-    path: /
-    controller: App\Controller\ExempleController::index
+#index:
+ #   path: /
+  #  controller: App\Controller\ExempleController::index
+
+#homeHandler:
+ #   path: /home
+  #  controller: App\Controller\SteamController::homeHandler
