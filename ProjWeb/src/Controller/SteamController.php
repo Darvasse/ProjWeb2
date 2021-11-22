@@ -7,16 +7,16 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
-class SteamController
+class SteamController extends AbstractController
 {
     /**
-     * @Route("/home")
+     * @Route("/home/{name}")
      */
-    public function homeHandler()
+    public function homeHandler($name)
     {
-        return new Response("Home");
+        return new Response("Home " . $name);
         #$games = $this->app->getService('steamModel')->getLastGames();
         #$this->render('MainView', ["games" => $games]);
     }

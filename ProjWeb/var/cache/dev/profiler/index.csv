@@ -1,0 +1,11 @@
+19ad71,::1,GET,http://localhost:8000/,1637616978,,200
+71a4ee,::1,GET,http://localhost:8000/,1637617219,,200
+665691,::1,GET,http://localhost:8000/home,1637617221,51e0a8,404
+51e0a8,::1,GET,http://localhost:8000/home,1637617221,,404
+dbe258,::1,GET,http://localhost:8000/home/Lilian,1637617224,,200
+a730af,::1,GET,http://localhost:8000/home/Lilian,1637617225,,200
+d4683e,::1,GET,http://localhost:8000/home/Lilian,1637617230,,200
+75084b,::1,GET,http://localhost:8000/home/Lilian,1637617232,,200
+c9828c,::1,GET,http://localhost:8000/,1637617234,,200
+3a1060,::1,GET,http://localhost:8000/,1637617849,,200
+d45c78,::1,GET,http://localhost:8000/,1637617991,,200
