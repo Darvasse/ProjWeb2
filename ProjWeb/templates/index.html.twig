@@ -1,2 +1,6 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 {% block title %} From child ! {% endblock %}
+{% block p %}<p> You look great {{ name }}! </p>{% endblock %}

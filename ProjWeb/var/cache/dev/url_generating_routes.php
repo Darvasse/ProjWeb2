@@ -14,7 +14,8 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'app_exemple_index' => [[], ['_controller' => 'App\\Controller\\ExempleController::index'], [], [['text', '/']], [], []],
-    'app_steam_homehandler' => [['name'], ['_controller' => 'App\\Controller\\SteamController::homeHandler'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/home']], [], []],
+    'testhome' => [[], ['_controller' => 'App\\Controller\\ExempleController::index'], [], [['text', '/']], [], []],
+    'api' => [['text'], ['_controller' => 'App\\Controller\\ExempleController::api'], [], [['variable', '/', '[^/]++', 'text', true], ['text', '/api']], [], []],
+    'myname' => [['name'], ['_controller' => 'App\\Controller\\SteamController::homeHandler'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/home']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
 ];

@@ -12,11 +12,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SteamController extends AbstractController
 {
     /**
-     * @Route("/home/{name}")
+     * @Route("/home/{name}", name="myname")
      */
     public function homeHandler($name)
     {
-        return new Response("Home " . $name);
+        #return new Response("Home " . $name);
+        return $this->render('index.html.twig', [
+          'name' => $name
+        ]);
         #$games = $this->app->getService('steamModel')->getLastGames();
         #$this->render('MainView', ["games" => $games]);
     }

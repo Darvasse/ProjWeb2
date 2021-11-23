@@ -25,7 +25,7 @@ class AssetsConfig
     private $packages;
     
     /**
-     * @default false
+     * @default true
      * @param ParamConfigurator|bool $value
      * @return $this
      */
