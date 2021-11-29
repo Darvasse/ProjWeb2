@@ -17,14 +17,13 @@
         <nav>
             <ol>
                 <li><a href="{{ path('testhome') }}">Home</a></li>
-                <li><a href="{{ path('myname', {name: 'Lilian'}) }}">Name</a></li>
+                <li><a href="{{ path('gamesList') }}">Games</a></li>
                 <li><a href="{{ path('api', {text: 'Coucou les bgs'}) }}">Api</a></li>
             </ol>
         </nav>
     {% endblock %}
         {% block body %}
             {% block p %}<p>Hello World ! from base.html.twig</p>{% endblock %}
-
         {% endblock %}
 
         {% block javascripts %}

@@ -2,5 +2,15 @@
 {% block stylesheets %}
     {{ parent() }}
 {% endblock %}
-{% block title %} From child ! {% endblock %}
-{% block p %}<p> You look great {{ name }}! </p>{% endblock %}
+{% block title %} Steam ! {% endblock %}
+{% block p %}<p>Hello World ! from index.html.twig</p>{% endblock %}
+
+{% block body %}
+    {% for game in games %}
+
+        <li>{{game.getName()}}</li>
+        <li>{{ game.getCategory() }}</li>
+        <li>{{ game.getDescription() }}</li>
+
+    {% endfor %}
+{% endblock %}
