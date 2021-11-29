@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '646eb2a745e6f8ed28104fdd8214ea055ef6fbaf',
+        'reference' => 'beed3c43eeccb759d4a21376bfcca03857cd579d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '646eb2a745e6f8ed28104fdd8214ea055ef6fbaf',
+            'reference' => 'beed3c43eeccb759d4a21376bfcca03857cd579d',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(

@@ -17,7 +17,7 @@ return [
     'testhome' => [[], ['_controller' => 'App\\Controller\\ExempleController::index'], [], [['text', '/']], [], []],
     'api' => [['text'], ['_controller' => 'App\\Controller\\ExempleController::api'], [], [['variable', '/', '[^/]++', 'text', true], ['text', '/api']], [], []],
     'game' => [[], ['_controller' => 'App\\Controller\\GameController::index'], [], [['text', '/game']], [], []],
-    'app_game_add' => [[], ['_controller' => 'App\\Controller\\GameController::add'], [], [['text', '/game/add/']], [], []],
+    'addGame' => [[], ['_controller' => 'App\\Controller\\GameController::add'], [], [['text', '/games/add/']], [], []],
     'gamesList' => [[], ['_controller' => 'App\\Controller\\GameController::list'], [], [['text', '/games']], [], []],
     'myname' => [['name'], ['_controller' => 'App\\Controller\\SteamController::homeHandler'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/home']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],

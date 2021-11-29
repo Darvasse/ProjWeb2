@@ -20,7 +20,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/games/add/", name=""addGame)
+     * @Route("/games/add/", name="addGame")
      */
     public function  add(EntityManagerInterface $em)
     {

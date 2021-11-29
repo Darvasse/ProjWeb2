@@ -288,3 +288,15 @@ a8eb5c,::1,GET,http://localhost:8000/,1638179161,,200
 201cc0,::1,GET,https://steam:8890/,1638179168,,200
 efe135,::1,GET,https://steam:8890/,1638179173,,200
 06ffa1,::1,GET,https://steam:8890/,1638179181,,200
+e4f448,::1,GET,http://localhost:8000/,1638179831,,200
+4adc8e,::1,GET,http://localhost:8000/games,1638179861,90cac0,500
+90cac0,::1,GET,http://localhost:8000/games,1638179863,,500
+8fef68,::1,GET,http://localhost:8000/games,1638179885,798a0f,500
+798a0f,::1,GET,http://localhost:8000/games,1638179887,,500
+e64dc0,::1,GET,http://localhost:8000/steam_db,1638180008,fdbe97,404
+fdbe97,::1,GET,http://localhost:8000/steam_db,1638180010,,404
+e08171,::1,GET,http://localhost:8000/,1638181508,,200
+b33fcc,::1,GET,http://localhost:8000/games,1638181557,853203,500
+853203,::1,GET,http://localhost:8000/games,1638181578,,500
+5b5fb1,::1,GET,http://localhost:8000/games,1638181589,752412,500
+752412,::1,GET,http://localhost:8000/games,1638181593,,500

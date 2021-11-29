@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitaeffc96fec1e469b80a766747ac6374f
+class ComposerStaticInit9642fc697e4a6d95502ce010bf889b89
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -381,8 +381,19 @@ class ComposerStaticInitaeffc96fec1e469b80a766747ac6374f
 
     public static $classMap = array (
         'App\\Controller\\ExempleController' => __DIR__ . '/../..' . '/src/Controller/ExempleController.php',
+        'App\\Controller\\GameController' => __DIR__ . '/../..' . '/src/Controller/GameController.php',
         'App\\Controller\\SteamController' => __DIR__ . '/../..' . '/src/Controller/SteamController.php',
+        'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
+        'App\\Entity\\Game' => __DIR__ . '/../..' . '/src/Entity/Game.php',
+        'App\\Entity\\GameCategory' => __DIR__ . '/../..' . '/src/Entity/GameCategory.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Entity\\UserGame' => __DIR__ . '/../..' . '/src/Entity/UserGame.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
+        'App\\Repository\\GameCategoryRepository' => __DIR__ . '/../..' . '/src/Repository/GameCategoryRepository.php',
+        'App\\Repository\\GameRepository' => __DIR__ . '/../..' . '/src/Repository/GameRepository.php',
+        'App\\Repository\\UserGameRepository' => __DIR__ . '/../..' . '/src/Repository/UserGameRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Service\\RandomHelper' => __DIR__ . '/../..' . '/src/Service/RandomHelper.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -3430,9 +3441,9 @@ class ComposerStaticInitaeffc96fec1e469b80a766747ac6374f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitaeffc96fec1e469b80a766747ac6374f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitaeffc96fec1e469b80a766747ac6374f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitaeffc96fec1e469b80a766747ac6374f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9642fc697e4a6d95502ce010bf889b89::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9642fc697e4a6d95502ce010bf889b89::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit9642fc697e4a6d95502ce010bf889b89::$classMap;
 
         }, null, ClassLoader::class);
     }

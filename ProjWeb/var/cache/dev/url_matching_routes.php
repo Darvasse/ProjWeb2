@@ -15,7 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'testhome', '_controller' => 'App\\Controller\\ExempleController::index'], null, null, null, false, false, null]],
         '/game' => [[['_route' => 'game', '_controller' => 'App\\Controller\\GameController::index'], null, null, null, false, false, null]],
-        '/game/add' => [[['_route' => 'app_game_add', '_controller' => 'App\\Controller\\GameController::add'], null, null, null, true, false, null]],
+        '/games/add' => [[['_route' => 'addGame', '_controller' => 'App\\Controller\\GameController::add'], null, null, null, true, false, null]],
         '/games' => [[['_route' => 'gamesList', '_controller' => 'App\\Controller\\GameController::list'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
