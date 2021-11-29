@@ -180,7 +180,9 @@ class __TwigTemplate_96d2df9c6c35da3e59628b21aba68462aa4547c200490c04b6dbae22d1b
         echo "            ";
         $this->displayBlock('p', $context, $blocks);
         // line 27
-        echo "
+        echo "            <p>";
+        echo twig_escape_filter($this->env, (isset($context["randomStuff"]) || array_key_exists("randomStuff", $context) ? $context["randomStuff"] : (function () { throw new RuntimeError('Variable "randomStuff" does not exist.', 27, $this->source); })()), "html", null, true);
+        echo "</p>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -238,7 +240,7 @@ class __TwigTemplate_96d2df9c6c35da3e59628b21aba68462aa4547c200490c04b6dbae22d1b
 
     public function getDebugInfo()
     {
-        return array (  223 => 31,  213 => 30,  194 => 26,  183 => 27,  180 => 26,  170 => 25,  156 => 21,  152 => 20,  148 => 19,  144 => 17,  134 => 16,  122 => 10,  119 => 9,  109 => 8,  90 => 5,  78 => 34,  76 => 30,  73 => 29,  70 => 25,  68 => 16,  62 => 12,  59 => 8,  55 => 5,  49 => 1,);
+        return array (  225 => 31,  215 => 30,  196 => 26,  183 => 27,  180 => 26,  170 => 25,  156 => 21,  152 => 20,  148 => 19,  144 => 17,  134 => 16,  122 => 10,  119 => 9,  109 => 8,  90 => 5,  78 => 34,  76 => 30,  73 => 29,  70 => 25,  68 => 16,  62 => 12,  59 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -269,7 +271,7 @@ class __TwigTemplate_96d2df9c6c35da3e59628b21aba68462aa4547c200490c04b6dbae22d1b
     {% endblock %}
         {% block body %}
             {% block p %}<p>Hello World ! from base.html.twig</p>{% endblock %}
-
+            <p>{{ randomStuff }}</p>
         {% endblock %}
 
         {% block javascripts %}
