@@ -119,7 +119,7 @@ class __TwigTemplate_96d2df9c6c35da3e59628b21aba68462aa4547c200490c04b6dbae22d1b
         echo "            <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\" integrity=\"sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb\" crossorigin=\"anonymous\">
             <link rel=\"stylesheet\" href=\"";
         // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/menu.css"), "html", null, true);
         echo "\"
         ";
         
@@ -254,7 +254,7 @@ class __TwigTemplate_96d2df9c6c35da3e59628b21aba68462aa4547c200490c04b6dbae22d1b
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\" integrity=\"sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb\" crossorigin=\"anonymous\">
-            <link rel=\"stylesheet\" href=\"{{ asset('css/style.css') }}\"
+            <link rel=\"stylesheet\" href=\"{{ asset('css/menu.css') }}\"
         {% endblock %}
 
 

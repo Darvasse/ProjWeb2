@@ -1,0 +1,25 @@
+body {
+    background : #3b4752;
+}
+
+p {
+    color : wheat;
+}
+
+.menu{
+    display: flex;
+    list-style-type: none;
+}
+
+.menu li{
+    min-width: 0px;
+    padding: 0px 100px 0px 100px;
+}
+
+.menu a {
+    color: whitesmoke;
+}
+
+.menu nav {
+    background-color: mediumseagreen;
+}

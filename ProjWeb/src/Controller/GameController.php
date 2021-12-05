@@ -11,23 +11,31 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class GameController extends AbstractController
 {
-    #[Route('/game', name: 'game')]
-    public function index(): Response
-    { 
-        return $this->render('game/index.html.twig', [
-            'controller_name' => 'GameController',
-        ]);
+    /**
+     * @Route("/", methods={"GET","HEAD"}, name="home")
+     */
+    public function index(EntityManagerInterface $em): Response
+    {
+        $repository = $em->getRepository(Game::class);
+
+        $games = $repository->findLastGames();
+        $empty = False;
+        if (!$games)
+            $empty = True;
+
+
+        return $this->render('index.html.twig', ['games' => $games, 'empty' => $empty]);
     }
 
     /**
-     * @Route("/games/add/", name="addGame")
+     * @Route("/games", methods={"POST"}, name="addGame")
      */
-    public function  add(EntityManagerInterface $em)
+    public function add(EntityManagerInterface $em)
     {
         $game = new Game();
-        $game->setName("Fifa")
-            ->setCategory("Sport")
-            ->setDescription("Mmmmm grass!");
+        $game->setName("Valorant")
+            ->setCategory("FPS")
+            ->setDescription("Pew pew !");
 
         $em->persist($game);
         $em->flush();
@@ -36,7 +44,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/games", name="gamesList")
+     * @Route("/games", methods={"GET","HEAD"}, name="gamesList")
      */
     public function list(EntityManagerInterface $em): Response
     {
@@ -44,11 +52,27 @@ class GameController extends AbstractController
 
         $games = $repository->findAll();
 
-        if(!$games) {
-            throw $this->createNotFoundException('Sorry, no game found in database !');
-        }
+        $empty = False;
+        if (!$games)
+            $empty = True;
 
-        return $this->render('index.html.twig', ['games' => $games]);
+        return $this->render('store.html.twig', ['games' => $games, 'empty' => $empty]);
     }
 
+    /**
+     * @Route("/games/{name}", methods={"GET","HEAD"}, name="oneGame")
+     */
+    public function getOne(EntityManagerInterface $em, string $name): Response
+    {
+        $repository = $em->getRepository(Game::class);
+
+        $game = $repository->findOneBy([ 'name' => $name]);
+
+        if(!$game)
+        {
+            throw $this->createNotFoundException('Cannot load this game !');
+        }
+
+        return $this->render('game.html.twig', [ 'game' => $game]);
+    }
 }

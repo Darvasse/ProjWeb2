@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block title %} Store {% endblock %}
+
+{% block body %}
+    {% if not empty %}
+        <table class="table table-dark table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{game.name}}</td>
+                    <td>{{ game.category }}</td>
+                    <td>{{ game.description }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h4>Sorry, no game stored :(</h4>
+    {% endif %}
+{% endblock %}

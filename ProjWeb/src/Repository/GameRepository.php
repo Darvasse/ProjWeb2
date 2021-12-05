@@ -47,4 +47,13 @@ class GameRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findLastGames()
+    {
+        return $this->createQueryBuilder('g')
+          ->orderBy('g.id', 'DESC')
+          ->setMaxResults(3)
+          ->getQuery()
+          ->getResult();
+    }
 }

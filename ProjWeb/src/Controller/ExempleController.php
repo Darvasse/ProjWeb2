@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ExempleController extends AbstractController
 {
     /**
-     * @Route("/", name="testhome")
+     * @Route("/couscous", name="testhome")
      **/
     public function index(RandomHelper $random)
     {

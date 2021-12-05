@@ -6,8 +6,8 @@
   4 => 'App\\Entity\\Category',
   5 => 'App\\Entity\\Game',
   6 => 'App\\Entity\\GameCategory',
-  7 => 'App\\Entity\\User',
-  8 => 'App\\Entity\\UserGame',
+  7 => 'App\\Entity\\UserGame',
+  8 => 'App\\Entity\\Users',
   9 => 'Doctrine\\Bundle\\DoctrineBundle\\Controller\\ProfilerController',
   10 => 'Doctrine\\ORM\\Cache\\Persister\\Entity\\AbstractEntityPersister',
   11 => 'Doctrine\\ORM\\Cache\\Persister\\Entity\\CachedEntityPersister',
@@ -44,4 +44,5 @@
   43 => 'Symfony\\Component\\HttpKernel\\Controller\\ErrorController',
   44 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableArgumentResolver',
   45 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
+  46 => 'Symfony\\Component\\Security\\Http\\Controller\\UserValueResolver',
 );

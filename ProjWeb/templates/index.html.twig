@@ -6,11 +6,19 @@
 {% block p %}<p>Hello World ! from index.html.twig</p>{% endblock %}
 
 {% block body %}
-    {% for game in games %}
+    {% if not empty %}
+        {% for game in games %}
+            <ul>
+                <li>{{game.name}}</li>
+                <li>{{ game.category }}</li>
+                <li>{{ game.description }}</li>
+            </ul>
 
-        <li>{{game.getName()}}</li>
-        <li>{{ game.getCategory() }}</li>
-        <li>{{ game.getDescription() }}</li>
+        {% endfor %}
+    {% else %}
+        <h4>Sorry, no game stored :(</h4>
+    {% endif %}
 
-    {% endfor %}
+
+
 {% endblock %}
