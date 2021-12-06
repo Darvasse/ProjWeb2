@@ -8,12 +8,14 @@
 {% block body %}
     {% if not empty %}
         {% for game in games %}
-            <ul>
-                <li>{{game.name}}</li>
-                <li>{{ game.category }}</li>
-                <li>{{ game.description }}</li>
-            </ul>
-
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{game.name}}</h5>
+                    <p class="card-text">{{ game.category }}</p>
+                    <p class="card-text">{{ game.description }}</p>
+                    <a href="#" class="btn btn-outline-success">Download</a>
+                </div>
+            </div>
         {% endfor %}
     {% else %}
         <h4>Sorry, no game stored :(</h4>

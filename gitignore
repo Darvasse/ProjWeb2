@@ -1,0 +1,10 @@
+
+ProjWeb/vendor/
+
+ProjWeb/var/cache/dev/
+
+ProjWeb/var/
+
+*.phar
+
+ProjWeb/composer.lock
