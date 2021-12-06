@@ -22,6 +22,7 @@ return [
     'oneGame' => [['name'], ['_controller' => 'App\\Controller\\GameController::getOne'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/games']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'app_signup' => [[], ['_controller' => 'App\\Controller\\SecurityController::signup'], [], [['text', '/signup']], [], []],
     'myname' => [['name'], ['_controller' => 'App\\Controller\\SteamController::homeHandler'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/home']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
 ];

@@ -21,6 +21,7 @@ return [
         ],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/signup' => [[['_route' => 'app_signup', '_controller' => 'App\\Controller\\SecurityController::signup'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
