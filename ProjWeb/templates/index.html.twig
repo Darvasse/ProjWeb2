@@ -26,7 +26,7 @@
                                     <p class="text-black">{{ downloads[game.id] }} 📥</p>
                                 </div>
                             </div>
-                            {% if app.user.id == game.idUser %}
+                            {% if app.user and app.user.id == game.idUser %}
                                 <div class="card-footer d-flex">
                                     <a class="btn btn-outline-primary me-3" href="{{ path("game_edit", {'id': game.getId()}) }}" >Edit</a>
                                     {{ include('games/_delete_form.html.twig') }}

@@ -90,8 +90,8 @@ class GameController extends AbstractController
     public function list(EntityManagerInterface $em, UserGameRepository $ugRep): Response
     {
         $repository = $em->getRepository(Game::class);
-
         $games = $repository->findAll();
+
         $downloads = [];
         foreach ($games as $game)
         {
@@ -105,20 +105,62 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/games/{id}", methods={"GET"}, name="game_show")
+     * @Route("/games/{param}", methods={"GET"}, name="game_show")
      */
-    public function getOne(EntityManagerInterface $em, int $id): Response
+    public function show(EntityManagerInterface $em,$param): Response
     {
         $repository = $em->getRepository(Game::class);
 
-        $game = $repository->findOneBy([ 'id' => $id]);
-
-        if(!$game)
+        if ((int)$param)
         {
-            throw $this->createNotFoundException('Cannot load this game !');
+            $id = $param;
+            $game = $repository->findOneBy([ 'id' => $id]);
+
+            if(!$game)
+            {
+                throw $this->createNotFoundException('Cannot load this game !');
+            }
+
+            return $this->render('game.html.twig', [ 'game' => $game]);
         }
 
-        return $this->render('game.html.twig', [ 'game' => $game]);
+        else
+        {
+            $cRep = $em->getRepository(Category::class);
+            if ($cRep->findOneBy(['name' => $param]))
+            {
+                $category = $param;
+                $games = $repository->findBy([ 'category' => $category]);
+            }
+            else
+            {
+                $name = $param;
+                $games = $repository->findByName($name);
+            }
+
+
+
+
+            if(!$games)
+            {
+                throw $this->createNotFoundException('Cannot load this game !');
+            }
+
+            $ugRep = $em->getRepository(UserGame::class);
+            $downloads = [];
+            foreach ($games as $game)
+            {
+                $downloads[$game->getId()] = count($ugRep->findBy(['idGame' => $game->getId()])); // Retourne le nombre de fois que le jeu a été dl
+            }
+
+            return $this->render('store.html.twig', [
+              'games' => $games,
+              'downloads' => $downloads,
+              ]);
+        }
+
+
+
     }
 
     /**
@@ -187,5 +229,15 @@ class GameController extends AbstractController
 
         $game = $gRep->findOneBy(['id' => $id]);
         return $this->redirect($game->getLink());
+    }
+
+    /**
+     * @Route("/games/search/r", methods={"POST"}, name="redirect_search")
+     */
+    public function r()
+    {
+        $search = $_POST['search'];
+        return $this->redirectToRoute('game_show', ['param' => $search]);
+
     }
 }

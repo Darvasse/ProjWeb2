@@ -9,31 +9,43 @@
         <div class="d-flex justify-content-center align-items-center mt-5">
             <h1 class="text-white">List of all games :</h1>
         </div>
-        <table class="table table-dark table-striped table-hover table-bordered mt-5">
-            <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Description</th>
-                <th scope="col">Downloads</th>
-                <th scope="col"></th>
-            </tr>
-            </th️ead>
-            <tbody>
-            {% for game in games %}
-                <tr>
-                    <td>{{game.name}}</td>
-                    <td>{{ game.category }}</td>
-                    <td>{{ game.description }}</td>
-                    <td>{{ downloads[game.id] }}</td>
-                    <td>
-                        <a class="btn btn-outline-info" href="{{ path('game_show', {'id': game.getId()}) }}">•••</a>
-                    </td>
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <form class="d-flex" action="{{ path('redirect_search')}}" method="POST">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
 
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+            </form>
+
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <div class="row row-cols-3 row-cols-md-3 g-4 ms-5">
+                {% for game in games %}
+                    <div class="col mb-5">
+                        <div class="card mx-5 border-warning h-100" style="width: 18rem;">
+                            <div class="card-header text-white bg-warning">
+                                <h1 class="h3 mb-3 font-weight-normal">{{game.name}}</h1>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-black">{{ game.category }}</p>
+                                <p class="card-text text-black">{{ game.description }}</p>
+                                <div class="d-flex">
+                                    <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+                                    <div class="mx-auto"></div>
+                                    <p class="text-black">{{ downloads[game.id] }} 📥</p>
+                                </div>
+                            </div>
+                            {% if app.user and app.user.id == game.idUser %}
+                                <div class="card-footer d-flex">
+                                    <a class="btn btn-outline-primary me-3" href="{{ path("game_edit", {'id': game.getId()}) }}" >Edit</a>
+                                    {{ include('games/_delete_form.html.twig') }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     {% else %}
         <h4>Sorry, no game stored :(</h4>
     {% endif %}
