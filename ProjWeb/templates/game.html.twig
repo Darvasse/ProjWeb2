@@ -5,9 +5,23 @@
 {% block title %} {{ game.name }} {% endblock %}
 
 {% block body %}
-
-    <h2>{{ game.name }}</h2>
-    <h4>{{ game.category }}</h4>
-    <p>{{ game.description }}</p>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="card border-warning h-100" style="width: 18rem;">
+            <div class="card-header text-white bg-warning">
+                <h1 class="h3 mb-3 font-weight-normal">{{game.name}}</h1>
+            </div>
+            <div class="card-body">
+                <p class="card-text text-black">{{ game.category }}</p>
+                <p class="card-text text-black">{{ game.description }}</p>
+                <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+            </div>
+            {% if app.user.id == game.idUser %}
+                <div class="card-footer d-flex">
+                    <a class="btn btn-outline-primary me-3" href="{{ path("game_edit", {'id': game.getId()}) }}" >Edit</a>
+                    {{ include('games/_delete_form.html.twig') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
 
 {% endblock %}

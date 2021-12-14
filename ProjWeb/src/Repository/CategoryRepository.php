@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use PhpParser\Node\Expr\Array_;
 
 /**
  * @method Category|null find($id, $lockMode = null, $lockVersion = null)
@@ -47,4 +48,15 @@ class CategoryRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllCategory(): array
+    {
+        $rowCategories = $this->findAll();
+        $category = [];
+
+        foreach ($rowCategories as $rowCat)
+        {
+            $category[$rowCat->getName()] = $rowCat->getId();
+        }
+        return $category;
+    }
 }

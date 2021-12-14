@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Users{% endblock %}
+{% block title %}New Game{% endblock %}
 
 {% block body %}
     <div class="mx-auto pt-5"></div>
 
-    {{ include('users/_form.html.twig', {'header': 'Please sign up','button_label': 'Sign up'}) }}
+    {{ include('games/_form.html.twig', {'header': 'Adding a game','button_label': 'Upload', 'canDelete': false}) }}
 
 {% endblock %}

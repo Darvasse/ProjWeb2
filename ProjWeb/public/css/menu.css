@@ -1,11 +1,6 @@
 body {
-    background : #3b4752;
+    background : #16282f;
 }
-
-p {
-    color : wheat;
-}
-
 .menu{
     display: flex;
     list-style-type: none;

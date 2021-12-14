@@ -3,11 +3,8 @@
 {% block title %}Edit Users{% endblock %}
 
 {% block body %}
-    <h1>Edit Users</h1>
+<div class="mx-auto pt-5"></div>
 
-    {{ include('users/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('users/_form.html.twig', {'header': 'Update your info','button_label': 'Update', 'canDelete': true}) }}
 
-    <a href="{{ path('users_index') }}">back to list</a>
-
-    {{ include('users/_delete_form.html.twig') }}
 {% endblock %}

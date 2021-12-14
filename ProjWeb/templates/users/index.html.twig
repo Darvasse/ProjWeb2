@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 {% block title %}Users index{% endblock %}
 
 {% block body %}
@@ -35,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('users_new') }}">Create new</a>
+    <a href="{{ path('app_signup') }}">Create new</a>
 {% endblock %}

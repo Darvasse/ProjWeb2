@@ -17,6 +17,11 @@ class Game
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $idUser;
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -32,9 +37,26 @@ class Game
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $link;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getIdUser(): ?int
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(int $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
     }
 
     public function getName(): ?string
@@ -73,4 +95,15 @@ class Game
         return $this;
     }
 
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(string $link): self
+    {
+        $this->link = $link;
+
+        return $this;
+    }
 }

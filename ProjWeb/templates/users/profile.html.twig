@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block title %} Profile! {% endblock %}
+
+{% block body %}
+    {% if games %}
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <h1 class="text-white">List of games you uploaded :</h1>
+        </div>
+        <div class="row row-cols-3 row-cols-md-3 g-4 ms-5 mt-5">
+            {% for game in games %}
+                <div class="col">
+                    <div class="card border-warning h-100" style="width: 18rem;">
+                        <div class="card-header text-white bg-warning">
+                            <h1 class="h3 mb-3 font-weight-normal">{{game.name}}</h1>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text text-black">{{ game.category }}</p>
+                            <p class="card-text text-black">{{ game.description }}</p>
+                            <div class="d-flex">
+                                <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+                                <div class="mx-auto"></div>
+                                <p class="text-black">{{ downloads[game.id] }} 📥</p>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <a class="btn btn-outline-primary me-3" href="{{ path("game_edit", {'id': game.getId()}) }}" >Edit</a>
+                            {{ include('games/_delete_form.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h4>You didn't upload any games yet ! </h4>
+    {% endif %}
+
+{% endblock %}
+

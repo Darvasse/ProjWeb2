@@ -9,19 +9,19 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ user.id }}</td>
+                <td>{{ game.id }}</td>
             </tr>
             <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
+                <th>Name</th>
+                <td>{{ game.name }}</td>
             </tr>
             <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <th>Category</th>
+                <td>{{ game.category}}</td>
             </tr>
             <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
+                <th>Description</th>
+                <td>{{ game.description }}</td>
             </tr>
         </tbody>
     </table>
@@ -30,5 +30,5 @@
 
     <a href="{{ path('users_edit', {'id': user.id}) }}">edit</a>
 
-    {{ include('users/_delete_form.html.twig') }}
+    {{ include('games/_delete_form.html.twig') }}
 {% endblock %}
