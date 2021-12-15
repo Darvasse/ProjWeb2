@@ -116,11 +116,6 @@ class GameController extends AbstractController
             $id = $param;
             $game = $repository->findOneBy([ 'id' => $id]);
 
-            if(!$game)
-            {
-                throw $this->createNotFoundException('Cannot load this game !');
-            }
-
             return $this->render('game.html.twig', [ 'game' => $game]);
         }
 
@@ -138,14 +133,6 @@ class GameController extends AbstractController
                 $games = $repository->findByName($name);
             }
 
-
-
-
-            if(!$games)
-            {
-                throw $this->createNotFoundException('Cannot load this game !');
-            }
-
             $ugRep = $em->getRepository(UserGame::class);
             $downloads = [];
             foreach ($games as $game)
@@ -158,9 +145,6 @@ class GameController extends AbstractController
               'downloads' => $downloads,
               ]);
         }
-
-
-
     }
 
     /**
@@ -206,7 +190,7 @@ class GameController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('users_show', ['id' => $this->getUser()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
     }
 
     /**
@@ -240,4 +224,5 @@ class GameController extends AbstractController
         return $this->redirectToRoute('game_show', ['param' => $search]);
 
     }
+
 }
