@@ -30,8 +30,10 @@
                                 <p class="card-text text-black">{{ game.category }}</p>
                                 <p class="card-text text-black">{{ game.description }}</p>
                                 <div class="d-flex">
-                                    <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
-                                    <div class="mx-auto"></div>
+                                    {% if app.user %}
+                                        <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+                                        <div class="mx-auto"></div>
+                                    {% endif %}
                                     <p class="text-black">{{ downloads[game.id] }} 📥</p>
                                 </div>
                             </div>

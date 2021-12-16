@@ -23,7 +23,9 @@
                 <div class="card-body">
                     <p class="card-text text-black">{{ game.category }}</p>
                     <p class="card-text text-black">{{ game.description }}</p>
-                    <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+                    {% if app.user %}
+                        <a href="{{ path("game_download", {'id': game.getId()}) }}" class="btn btn-outline-success">Download</a>
+                    {% endif %}
                 </div>
                 {% if app.user and app.user.id == game.idUser %}
                     <div class="card-footer d-flex">

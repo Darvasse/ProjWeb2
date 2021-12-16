@@ -71,11 +71,14 @@ class UsersController extends AbstractController
     /**
      * @Route("/{id}", methods={"GET"}, name="users_show")
      */
-    public function show(Users $user, int $id, EntityManagerInterface $em): Response
+    public function show(int $id, EntityManagerInterface $em): Response
     {
-        if (!$this->isGranted('ROLE_SUPER_ADMIN'))
+        if(!$this->getUser())
+            return $this->redirectToRoute('login', []);
+
+        if ($this->isGranted('ROLE_SUPER_ADMIN'))
             return $this->render('users/show.html.twig', [
-              'user' => $user,
+              'user' => $em->getRepository(Users::class)->findOneBy(['id' => $id]),
             ]);
 
         if ($this->getUser()->getId() == $id)
@@ -92,14 +95,14 @@ class UsersController extends AbstractController
             }
 
             return $this->render('users/profile.html.twig', [
-              'user' => $user,
+              'user' => $this->getUser(),
               'games' => $games,
               'downloads' => $downloads,
             ]);
         }
 
 
-        return $this->redirectToRoute('home', []);
+        return $this->render('404.html.twig', []);
     }
 
     /**
